@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        @keyframes gradient {
+            0% {background-color: rgb(200,200,255);}
+            25% {background-color: rgb(230,255,200);}
+            50% {background-color: rgb(200, 255, 255);}
+            100% {background-color: rgb(200,200,255);}
+        }
+
+        .div {
+            position: fixed;
+            width : 430px;
+            height: 500px;
+            background-color: rgb(200,200,255);
+            animation-name: gradient;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+        }
+
+    </style>
+</head>
+<body>
+    <div class = "div">
+        <style>
+            .displayScreen {
+                background-color: white;
+                position: relative;
+                width: 85%;
+                height: 12%;
+                left: 5%;
+                right: 5%;
+                padding-right: 5%;
+                padding-top: 5%;
+                text-align: right;
+            }
+
+            .buttonsSection {
+                position: relative;
+                width: 90%;
+                height: 60%;
+                background-color: white;
+                padding-top: 10%;
+                left: 5%;
+                right: 5%;                
+            }
+
+            .button {
+                position: relative;
+                border: none;
+                color: black;
+                width: 20%;
+                height: 70%;
+                text-align: center;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+            .row {
+                position: relative;
+                width: 90%;
+                height: 18%;
+                left: 5%;
+                right: 5%;   
+            }
+
+        </style>
+        
+        <h1 class = "displayScreen" id = "screen"></h1>
+
+        <div class = "buttonsSection">
+
+            <div class = "row">
+                <button class = "button" style = "top: 20%;" id = "("> ( </button>
+                <button class = "button" style = "top: 20%; left: 5%" id = ")"> ) </button>
+                <button class = "button" style = "top: 20%; left: 10%;" id = "%"> % </button>
+                <button class = "button" style = "top: 20%; left: 15%;" id = "AC"> <b>AC</b> </button>
+            </div>
+
+            <div class = "row">
+                <button class = "button" style = "top: 20%;" id = "7"> 7 </button>
+                <button class = "button" style = "top: 20%; left: 5%" id = "8"> 8 </button>
+                <button class = "button" style = "top: 20%; left: 10%;" id = "9"> 9 </button>
+                <button class = "button" style = "top: 20%; left: 15%;" id = "/"> / </button>
+            </div>
+
+            <div class = "row">
+                <button class = "button" style = "top: 5%;" id = "4"> 4 </button>
+                <button class = "button" style = "top: 5%; left: 5%;" id = "5"> 5 </button>
+                <button class = "button" style = "top: 5%; left: 10%;" id = "6"> 6 </button>
+                <button class = "button" style = "top: 5%; left: 15%;" id = "x"> x </button>
+            </div>
+
+            <div class = "row">
+                <button class = "button" id = "1"> 1 </button>
+                <button class = "button" style = "left: 5%;" id = "2"> 2 </button>
+                <button class = "button" style = "left: 10%;" id = "3"> 3 </button>
+                <button class = "button" style = "left: 15%;" id = "-"> - </button>
+            </div>
+            
+            <div class = "row">
+                <button class = "button" id = "0"> 0 </button>
+                <button class = "button" style = "left: 5%;" id = "."> . </button>
+                <button class = "button" style = "left: 10%;" id = "="> = </button>
+                <button class = "button" style = "left: 15%;" id = "+"> + </button>
+            </div>
+        </div>
+
+        <script src = 'numbers.js'></script>
+        <script src = 'symbols.js'></script>
+        <script src = 'equal.js'></script>
+    </div>
+</body>
+</html>
