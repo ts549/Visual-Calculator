@@ -43,7 +43,6 @@ let performOperation = function(firstOperand, secondOperand, operation) {
 let computeExpression = function() {
     string = document.getElementById("screen").innerHTML;
     for (let i = string.length - 1; i >= 0; i--) {
-        console.log(i);
         if (isOperation(string[i]) || string[i] == ')') {
             operationStack.push(string[i]);
         } else if (string[i] == '(') {
@@ -73,9 +72,6 @@ let computeExpression = function() {
         }
     }
 
-    console.log(operationStack);
-    console.log(operandStack);
-
     while(operationStack.length > 0) {
         firstOperand = operandStack.pop();
         secondOperand = operandStack.pop();
@@ -84,7 +80,6 @@ let computeExpression = function() {
         result = performOperation(firstOperand, secondOperand, operation);
 
         operandStack.push(result);
-        console.log(operandStack);
     }
 
     document.getElementById("screen").innerHTML = operandStack.pop().toString();
