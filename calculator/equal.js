@@ -3,12 +3,15 @@ let operandStack = [];
 
 let operations = [
     'x','/','-','+'
-]; //Increases space usage storing in array but improves readability and organization
+]; //Increases space usage but improves readability and organization
 
 let numbers = [
     '0','1','2','3','4','5','6','7','8','9'
 ];
 
+/**
+ * Following two functions check to see if character is an operation or number
+ */
 let isOperation = function(character) {
     for (let operation of operations) {
         if (character === operation) return true;
@@ -23,6 +26,9 @@ let isNumber = function(character) {
     return false;
 };
 
+/**
+ * Function to perform the operation on the operands 
+ */
 let performOperation = function(firstOperand, secondOperand, operation) {
     if (operation === '/') return firstOperand / secondOperand;
     if (operation === 'x') return firstOperand * secondOperand;
@@ -30,12 +36,14 @@ let performOperation = function(firstOperand, secondOperand, operation) {
     if (operation === '+') return firstOperand + secondOperand;
 };
 
+/**
+ * Function that computes the entire expression in the display screen.
+ * Applies Dijkstra's two stack algorithm to respect parentheses.
+ */
 let computeExpression = function() {
     string = document.getElementById("screen").innerHTML;
-    /**
-     * Apply Dijkstra's two stack algorithm from the back of the expression
-     */
     for (let i = string.length - 1; i >= 0; i--) {
+        console.log(i);
         if (isOperation(string[i]) || string[i] == ')') {
             operationStack.push(string[i]);
         } else if (string[i] == '(') {
