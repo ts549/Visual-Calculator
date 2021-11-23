@@ -2,8 +2,8 @@ let operationStack = [];
 let operandStack = [];
 
 let operations = [
-    '*','/','-','+'
-]; //Increases space usage but improves readability and organization
+    'x','/','-','+'
+]; //Increases space usage storing in array but improves readability and organization
 
 let numbers = [
     '0','1','2','3','4','5','6','7','8','9'
